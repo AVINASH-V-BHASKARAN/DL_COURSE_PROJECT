@@ -1,0 +1,35 @@
+{
+  "dataset": "India Air Quality Database, XKDR Forum",
+  "source": "CPCB Continuous Ambient Air Quality Monitoring network (CAAQM)",
+  "source_url": "https://airquality.xkdr.org/",
+  "api_url": "https://airquality.xkdr.org/v1/measurements",
+  "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+  "attribution": "XKDR Forum (2026), India Air Quality Database; source network: CPCB CAAQM",
+  "downloaded_at_utc": "2026-10-25T06:44:35Z",
+  "coverage_requested": {
+    "start": "2025-05-01",
+    "end": "2025-09-01"
+  },
+  "coverage_returned": {
+    "start": "2025-05-01",
+    "end": "2025-09-01",
+    "city_count": 97
+  },
+  "aggregation": "Daily mean/min/max/count per station and pollutant; timestamps are IST.",
+  "parameters": [
+    "PM2.5",
+    "PM10"
+  ],
+  "rows_downloaded": 76613,
+  "api_rows_reported": 76613,
+  "stations_file": "cpcb_caaqm_stations.csv",
+  "measurements_file": "cpcb_caaqm_daily_pm_2025-05_to_2025-09.csv",
+  "archive_snapshot": {
+    "rows": 196521834,
+    "bytes": 409568028,
+    "n_months": 207,
+    "first_month": "2009-01",
+    "last_month": "2026-03"
+  },
+  "limitations": "Measurements are published as received without validation or gap filling. This archive does not publish AQI; no AQI was derived from these two pollutants. Although the archive metadata lists coverage through 2026-03, direct daily queries returned no observations after 2025-09-01; the downloaded file reflects the records actually returned."
+}

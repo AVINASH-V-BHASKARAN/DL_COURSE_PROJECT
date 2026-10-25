@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "installCommand": "npm --prefix \"DL Course Project/UI/project\" ci",
+  "buildCommand": "npm --prefix \"DL Course Project/UI/project\" run build",
+  "outputDirectory": "DL Course Project/UI/project/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

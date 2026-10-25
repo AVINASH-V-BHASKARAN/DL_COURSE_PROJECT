@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-ink-900 text-fog font-sans antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: rgba(198, 255, 77, 0.28);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.35em] text-lime/80;
+  }
+  .surface {
+    @apply rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm;
+  }
+  .surface-glow {
+    box-shadow: 0 0 0 1px rgba(198, 255, 77, 0.08), 0 18px 60px -20px rgba(198, 255, 77, 0.18);
+  }
+  .hairline {
+    background-image: linear-gradient(90deg, transparent, rgba(198, 255, 77, 0.35), transparent);
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(198, 255, 77, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(198, 255, 77, 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .text-gradient-lime {
+    background: linear-gradient(180deg, #F5F7F2 0%, #C6FF4D 120%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-lime/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #080A08; }
+::-webkit-scrollbar-thumb { background: #1E251E; border-radius: 8px; border: 2px solid #080A08; }
+::-webkit-scrollbar-thumb:hover { background: #2a3a20; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
